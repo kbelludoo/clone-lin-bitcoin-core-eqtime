@@ -1,0 +1,21 @@
+@RULEL:CLONE_LIN_BITCOIN_EQTIME:1.0.0
+~R{.u=upstream .l=lin .p=proofs .n=non_goals}
+.u{
+  repo="https://github.com/bitcoin/bitcoin"
+  tag="v27.1"
+  commit="1088a98f5aad080cc6cca2da174f206509fcda6c"
+  license="MIT"
+  kernel="src/chain.cpp GetBlockProofEquivalentTime"
+}
+.l{
+  file="src/lin_bitcoin_eqtime.lin"
+  class="EXPERIMENTAL"
+}
+.p{
+  lin_open="https://github.com/kbelludoo/lin-open"
+  harness="test/prove_bitcoin_eqtime_external.py"
+}
+.n{
+  not_a_node=1
+  not_uint256_chainwork=1
+}
